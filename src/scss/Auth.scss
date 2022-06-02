@@ -1,0 +1,98 @@
+@use "./Variables.scss" as var;
+
+.__Auth {
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .form {
+    background: #ffffff;
+    box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.13);
+    border-radius: 15px;
+    padding: 2rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-width: 30%;
+    .logo {
+      height: 170px;
+    }
+    .heading {
+      font-weight: 500;
+      font-size: 1.3rem;
+      span {
+        font-size: 1.1em;
+      }
+    }
+    .field {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+      width: 100%;
+      input {
+        width: 100%;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        border-radius: 10px;
+        padding: 12px 20px;
+        transition: 300ms;
+        outline: none;
+        &:hover {
+          border: 1px solid rgba(0, 0, 0, 1);
+          transition: 300ms;
+          outline: none;
+        }
+        &:focus {
+          border: 1px solid rgba(0, 0, 0, 1);
+          transition: 300ms;
+          outline: none;
+        }
+      }
+    }
+    .button {
+      background: var.$primary-blue;
+      border-radius: 10px;
+      outline: none;
+      border: 1px solid transparent;
+      color: white;
+      width: 100%;
+      padding: 1rem 0rem;
+      font-weight: 500;
+      transition: 300ms;
+      &:hover {
+        border: 1px solid var.$primary-blue;
+        background: transparent;
+        color: var.$primary-blue;
+        transition: 300ms;
+      }
+      &:focus {
+        border: 1px solid var.$primary-blue;
+        background: transparent;
+        color: var.$primary-blue;
+        transition: 300ms;
+      }
+    }
+    .redirect {
+      font-weight: 400;
+      font-size: 0.95rem;
+      a {
+        color: black;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .__Auth {
+    .form {
+      width: 100%;
+      border-radius: 0px;
+      box-shadow: none;
+    }
+  }
+}
