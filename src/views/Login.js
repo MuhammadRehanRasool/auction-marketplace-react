@@ -1,13 +1,14 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import "./../scss/Auth.scss";
 import { Link } from "react-router-dom";
 import { setMessage, resetMessage } from "./../CONSTANT";
 
 export default function Login() {
-  const [formdata, setFormdata] = useState({
+  const INIT = {
     username: "",
     password: "",
-  });
+  };
+  const [formdata, setFormdata] = useState(INIT);
 
   const [isForget, setIsForget] = useState(false);
 
@@ -48,7 +49,7 @@ export default function Login() {
   return (
     <div className="__Auth">
       <div className="form">
-        <img src="logo.svg" className="logo" alt="company logo"/>
+        <img src="logo.svg" className="logo" alt="company logo" />
         <h4 className="heading my-3">
           Welcome to <span className="fw-bold">DroppinPrices</span>
         </h4>
