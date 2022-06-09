@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 import "./../scss/Home.scss";
 
@@ -34,13 +35,13 @@ export default function Home() {
         <div className="col-lg-6 col-sm-12 col-setting">
           <div className="wrapper">
             <div className="one i1">
-              <img src="homepage1.png" alt="homepage1"/>
+              <img src="homepage1.png" alt="homepage1" />
               <span className="discount">
                 <b>30</b>% <span className="fs-short">OFF</span>
               </span>
             </div>
             <div className="one i2">
-              <img src="homepage2.png" alt="homepage2"/>
+              <img src="homepage2.png" alt="homepage2" />
               <span className="discount">
                 <b>30</b>% <span className="fs-short">OFF</span>
               </span>
@@ -48,6 +49,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

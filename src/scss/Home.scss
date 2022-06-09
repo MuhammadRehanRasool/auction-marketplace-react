@@ -38,7 +38,7 @@
   }
 
   .landing {
-    padding: var.$content-margin !important;
+    padding: 0 var.$content-margin !important;
     height: calc(100vh - var.$navbar-height);
     backdrop-filter: blur(250px);
     width: 100%;

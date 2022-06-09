@@ -1,0 +1,106 @@
+@use "./Variables.scss" as var;
+.__Footer {
+  padding: 5rem var.$content-margin 1rem var.$content-margin !important;
+  background-color: var.$primary-blue;
+  .upper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    .u1 {
+      font-weight: 500;
+      font-size: 3rem;
+      line-height: 3rem;
+      color: #ffffff;
+    }
+    .u2 {
+      font-weight: 400;
+      font-size: 1.7rem;
+      line-height: 20px;
+      color: rgba(255, 255, 255, 0.85);
+    }
+    .u3 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      input,
+      button {
+        padding: 0.8rem 2rem;
+        border: none;
+      }
+      input {
+        min-width: 300px;
+        width: 100%;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+      }
+      button {
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 1rem;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+      }
+    }
+    .u4 {
+      font-weight: 300;
+      font-size: 1rem;
+      line-height: 1.2rem;
+      text-align: center;
+      color: #ffffff;
+      width: 40%;
+    }
+    .u5 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      input {
+        margin: 0 1.5rem 0 0;
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 5px;
+      }
+      span {
+        font-weight: 300;
+        font-size: 0.85rem;
+        line-height: 1.2rem;
+
+        text-align: center;
+
+        color: #ffffff;
+      }
+    }
+    .u6 {
+      font-weight: 500;
+      font-size: 2rem;
+      line-height: 2rem;
+      text-align: center;
+      color: #ffffff;
+    }
+    .u7 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      a {
+        width: 3.5rem;
+        height: 3.5rem;
+        background: rgba(255, 255, 255, 0.25);
+        box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.08);
+        border-radius: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        margin: 0rem 1rem;
+      }
+    }
+  }
+}
