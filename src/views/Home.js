@@ -34,13 +34,13 @@ export default function Home() {
         <div className="col-lg-6 col-sm-12 col-setting">
           <div className="wrapper">
             <div className="one i1">
-              <img src="homepage1.png" />
+              <img src="homepage1.png" alt="homepage1"/>
               <span className="discount">
                 <b>30</b>% <span className="fs-short">OFF</span>
               </span>
             </div>
             <div className="one i2">
-              <img src="homepage2.png" />
+              <img src="homepage2.png" alt="homepage2"/>
               <span className="discount">
                 <b>30</b>% <span className="fs-short">OFF</span>
               </span>

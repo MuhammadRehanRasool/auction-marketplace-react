@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./../scss/Navbar.scss";
 import MenuIcon from "@mui/icons-material/Menu";
 
@@ -10,7 +10,7 @@ const Navbar = (props) => {
     <>
       <nav className="navbar navbar-expand-lg __Navbar">
         <Link to="/" className="navbar-brand">
-          <img className="logo" src="logo.svg" />
+          <img className="logo" src="logo.svg" alt="navbar logo"/>
         </Link>
         <button
           className="navbar-toggler"
