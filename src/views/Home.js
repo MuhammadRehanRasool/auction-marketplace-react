@@ -3,6 +3,12 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 import "./../scss/Home.scss";
+import ProductCard from "../components/ProductCard";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
 
 export default function Home() {
   return (
@@ -49,6 +55,66 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <div className="productWrapper">
+        <div className="hotSelling">
+          <span className="mainHeading">
+            Hot selling <span className="orange">products</span>
+          </span>
+          <span className="subHeading">
+            Discover, collect, and sell extraordinary products
+          </span>
+          <br />
+          <div className="slider my-5">
+            <Swiper
+              slidesPerView={4}
+              pagination={{
+                clickable: true,
+              }}
+              modules={[Pagination]}
+              className="mySwiper"
+            >
+              <SwiperSlide>
+                <ProductCard />
+              </SwiperSlide>
+              <SwiperSlide>
+                <ProductCard />
+              </SwiperSlide>
+              <SwiperSlide>
+                <ProductCard />
+              </SwiperSlide>
+              <SwiperSlide>
+                <ProductCard />
+              </SwiperSlide>
+              <SwiperSlide>
+                <ProductCard />
+              </SwiperSlide>
+            </Swiper>
+          </div>
+        </div>
+        <div className="bidGallery">
+          <span className="mainHeading">
+            Bid Gallery <span className="orange">Location</span>
+          </span>
+          <span className="subHeading">
+            Discover, collect, and sell extraordinary products
+          </span>
+          <br />
+          <div className="products my-5">
+            <div className="row w-100 d-flex">
+              {[
+                [...Array(15).keys()].map((a, c) => {
+                  return (
+                    <div className="col-lg-3 col-sm-12 col-md-4 my-3">
+                      <ProductCard />
+                    </div>
+                  );
+                }),
+              ]}
+            </div>
+          </div>
+        </div>
+      </div>
+
       <Footer />
     </div>
   );

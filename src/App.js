@@ -1,3 +1,4 @@
+import React from "react";
 import "./App.scss";
 import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
 import Login from "./views/Login";

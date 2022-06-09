@@ -139,4 +139,74 @@
       }
     }
   }
+
+  .productWrapper {
+    padding: var.$content-margin !important;
+    width: 100%;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .hotSelling,
+    .bidGallery {
+      width: 100%;
+      overflow-x: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      .mainHeading {
+        font-family: "GilroyBold";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 2rem;
+        line-height: 3rem;
+        color: #000000;
+        .orange {
+          color: var.$primary-orange;
+        }
+      }
+      .subHeading {
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 1.5rem;
+        color: #000000;
+      }
+      .slider {
+        width: 100%;
+        overflow-x: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        position: relative;
+        .swiper-slide {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: row;
+        }
+        .swiper-pagination {
+          position: unset !important;
+          margin-top: 2rem;
+        }
+        .swiper-pagination-bullet {
+          background: rgba(255, 158, 136, 0.45) !important;
+          width: 13px !important;
+          height: 13px !important;
+        }
+      }
+    }
+    .bidGallery {
+      .products {
+        width: 100%;
+        overflow-x: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+    }
+  }
 }
