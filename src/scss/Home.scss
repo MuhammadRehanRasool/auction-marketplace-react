@@ -1,0 +1,142 @@
+@use "./Variables.scss" as var;
+.__Home {
+  position: relative;
+  .landing {
+    margin-top: var.$navbar-height;
+  }
+
+  .background {
+    position: absolute;
+    // top: var.$navbar-height;
+    height: calc(100vh - var.$navbar-height);
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(250px);
+    width: 100%;
+    overflow-x: hidden;
+    .balls {
+      position: absolute;
+      height: 20rem;
+      width: 20rem;
+      border-radius: 50%;
+      display: inline-block;
+      &.r1 {
+        bottom: 5rem;
+        right: 5rem;
+        background-color: var.$primary-orange;
+      }
+      &.r2 {
+        bottom: 5rem;
+        left: 10rem;
+        background-color: #fabca6;
+      }
+      &.r3 {
+        top: 5rem;
+        left: 10rem;
+        background-color: var.$primary-blue;
+      }
+    }
+  }
+
+  .landing {
+    padding: var.$content-margin !important;
+    height: calc(100vh - var.$navbar-height);
+    backdrop-filter: blur(250px);
+    width: 100%;
+    overflow-x: hidden;
+    .col-setting {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      position: relative;
+      overflow-x: hidden;
+
+      //   Right Side
+      .wrapper {
+        top: 0;
+        overflow-x: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        .one {
+          position: absolute;
+          &.i1 {
+            top: 45%;
+            right: 45%;
+            z-index: 10;
+            .discount {
+              color: white !important;
+              padding: 5px 15px;
+              position: absolute;
+              top: 45%;
+              left: -15%;
+              z-index: 10;
+              display: inline-block;
+              background: #0098da;
+              border-radius: 10px;
+              font-weight: 600;
+              font-size: 1rem;
+              .fs-short {
+                font-size: 0.7rem;
+              }
+            }
+          }
+          &.i2 {
+            left: 45%;
+            bottom: 45%;
+            .discount {
+              color: white !important;
+              padding: 5px 15px;
+              position: absolute;
+              top: 45%;
+              right: -15%;
+              z-index: 10;
+              display: inline-block;
+              background: #0098da;
+              border-radius: 10px;
+              font-weight: 600;
+              font-size: 1rem;
+              .fs-short {
+                font-size: 0.7rem;
+              }
+            }
+          }
+        }
+      }
+    }
+    .content {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+      .mainheading {
+        max-width: 60%;
+        font-family: "GilroyBold";
+        font-style: normal;
+        font-weight: 800;
+        font-size: calc(4 * 1rem);
+        line-height: 100%;
+        letter-spacing: -0.01em;
+        color: #000000;
+        margin-bottom: 2rem;
+      }
+      .subheading {
+        max-width: 80%;
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 500;
+        font-size: calc(1 * 1rem);
+        color: #000000;
+        margin-bottom: 2rem;
+      }
+      .Button-Custom-1.w-full {
+        width: fit-content;
+      }
+    }
+  }
+}

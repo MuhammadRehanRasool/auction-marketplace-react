@@ -1,7 +1,53 @@
-import React from 'react'
+import React from "react";
+import Navbar from "../components/Navbar";
+import { Link } from "react-router-dom";
+import "./../scss/Home.scss";
 
 export default function Home() {
   return (
-    <div>Home</div>
-  )
+    <div className="__Home">
+      <Navbar />
+      <div className="background">
+        <div className="balls r1"></div>
+        <div className="balls r2"></div>
+        <div className="balls r3"></div>
+      </div>
+      <div className="landing row">
+        <div className="col-lg-6 col-sm-12 col-setting">
+          <div className="content">
+            <span className="mainheading">
+              Largest auction marketplace for any listing...
+            </span>
+            <span className="subheading">
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book.
+            </span>
+            <Link to="/" className="Button-Custom-1 fill w-full">
+              <span className="content">
+                <span className="type">WANT TO BECOME A DEALER ?</span>
+              </span>
+            </Link>
+          </div>
+        </div>
+        <div className="col-lg-6 col-sm-12 col-setting">
+          <div className="wrapper">
+            <div className="one i1">
+              <img src="homepage1.png" />
+              <span className="discount">
+                <b>30</b>% <span className="fs-short">OFF</span>
+              </span>
+            </div>
+            <div className="one i2">
+              <img src="homepage2.png" />
+              <span className="discount">
+                <b>30</b>% <span className="fs-short">OFF</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
