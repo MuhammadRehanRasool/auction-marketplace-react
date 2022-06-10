@@ -1,29 +1,89 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./../scss/ProductCard.scss";
+import moment from "moment";
 
+export default function ProductCard(props) {
+  const [data, setData] = useState({
+    itemId: "",
+    title: "",
+    auctionNumber: "",
+    currentBid: "",
+    minimumBid: "",
+    image: "",
+  });
 
-export default function ProductCard() {
+  const [countdown, setCountdown] = useState({
+    day: "",
+    hour: "",
+    minute: "",
+    second: "",
+  });
+
+  useEffect(() => {
+    let countdownLoop;
+    if (props.product !== "" || props.product !== null) {
+      setData(props.product);
+      let eventTime = new Date(props.product.bidExpiry).getTime();
+      let currentTime = new Date().getTime();
+      let diffTime = eventTime - currentTime;
+      let duration = moment.duration(diffTime, "milliseconds");
+      let interval = 1000;
+      countdownLoop = setInterval(function () {
+        duration = moment.duration(duration - interval, "milliseconds");
+        setCountdown({
+          day: Math.floor(duration.asDays()),
+          hour: duration.hours(),
+          minute: duration.minutes(),
+          second: duration.seconds(),
+        });
+      }, interval);
+    }
+
+    return () => {
+      clearInterval(countdownLoop);
+    };
+  }, []);
+
+  if (!props.product) return;
+
   return (
     <div className="__ProductCard">
-      <div className="card">
-        <img src="products/1.png" className="card-img-top" alt="1.png" />
+      <div className={`card ${props.type === "browse" ? props.type : ""}`}>
+        <img src={data.image} className="card-img-top" alt={data.title} />
+        {props.type === "browse" ? (
+          <span role={"button"} className="heart">
+            <img src="icons/heart.png" alt="heart" />
+          </span>
+        ) : (
+          ""
+        )}
         <div className="card-body">
           <div className="row1">
-            <span className="title">Headphones</span>
-            <span className="number">Auc# 001</span>
+            <span className="title">{data.title}</span>
+            <span className="number">Auc# {data.auctionNumber}</span>
           </div>
           <div className="row2 my-4">
             <div className="bid justify-content-start">
               <span className="label">Current bid</span>
-              <span className="value">$99.9</span>
+              <span className="value">${data.currentBid}</span>
             </div>
             <div className="bid justify-content-end">
               <span className="label">Minimum bid</span>
-              <span className="value">$9.9</span>
+              <span className="value">${data.minimumBid}</span>
             </div>
           </div>
-          <div className="border-top button" role="button">
-            QUICK BID
+          <div className="border-top button">
+            <span role="button" className="bidButton">
+              QUICK BID
+            </span>
+            {props.type === "browse" ? (
+              <span className="timeLeft">
+                <b>{countdown.day}</b>d <b>{countdown.hour}</b>h{" "}
+                <b>{countdown.minute}</b>m <b>{countdown.second}</b>s
+              </span>
+            ) : (
+              ""
+            )}
           </div>
         </div>
       </div>

@@ -207,6 +207,17 @@
         align-items: center;
         flex-direction: column;
       }
+      .buttonWrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .Button-Custom-1.w-full {
+          width: fit-content;
+          text-transform: uppercase!important;
+        }
+      }
     }
   }
 }
