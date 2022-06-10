@@ -11,6 +11,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 export default function Home() {
+  // eslint-disable-next-line
   const [hotSelling, setHotSelling] = useState([
     {
       itemId: "73074d40-1f5a-443e-85a9-879236bad634",
@@ -94,6 +95,7 @@ export default function Home() {
     },
   ]);
 
+  // eslint-disable-next-line
   const [browse, setBrowse] = useState([
     {
       itemId: "b6255eed-cb16-42e6-a530-5c72ae653666",

@@ -44,6 +44,7 @@ export default function ProductCard(props) {
     return () => {
       clearInterval(countdownLoop);
     };
+    // eslint-disable-next-line
   }, []);
 
   if (!props.product) return;
