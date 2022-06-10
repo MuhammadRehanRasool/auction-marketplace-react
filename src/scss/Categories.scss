@@ -1,0 +1,256 @@
+@use "./Variables.scss" as var;
+.__Categories {
+  position: relative;
+  .landing {
+    margin-top: var.$navbar-height;
+  }
+
+  .background {
+    position: absolute;
+    // top: var.$navbar-height;
+    height: calc(100vh - var.$navbar-height);
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(250px);
+    width: 100%;
+    overflow-x: hidden;
+    .balls {
+      position: absolute;
+      height: 20rem;
+      width: 20rem;
+      border-radius: 50%;
+      display: inline-block;
+      &.r1 {
+        top: 2rem;
+        right: 5rem;
+        background-color: var.$primary-orange;
+      }
+      &.r2 {
+        top: 2rem;
+        left: 10rem;
+        background-color: #fabca6;
+      }
+      &.r3 {
+        top: 2rem;
+        left: 5rem;
+        background-color: var.$primary-blue;
+      }
+    }
+  }
+
+  .landing {
+    padding: var.$content-margin !important;
+    // height: calc(100vh - var.$navbar-height);
+    height: 100%;
+    backdrop-filter: blur(250px);
+    width: 100%;
+    overflow-x: hidden;
+    .content {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      .mainheading {
+        max-width: 60%;
+        font-family: "GilroyBold";
+        font-style: normal;
+        font-weight: 800;
+        font-size: calc(4 * 1rem);
+        line-height: 100%;
+        letter-spacing: -0.01em;
+        color: #000000;
+        margin-bottom: 2rem;
+        text-align: center;
+      }
+      .subheading {
+        max-width: 50%;
+        text-align: center;
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 500;
+        font-size: calc(1 * 1rem);
+        color: #000000;
+        margin-bottom: 2rem;
+      }
+      .search {
+        margin-right: 2rem;
+        color: #c6c6c6;
+        min-width: 25rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 40%;
+        input {
+          border: 1.3px solid #cccccc;
+          border-radius: 25px;
+          width: inherit;
+          padding: 0 4rem 0 1.5rem;
+          height: 3rem;
+          background-color: transparent;
+        }
+        img {
+          width: 1.2rem;
+          height: 1.2rem;
+          transform: translateX(-45px);
+        }
+      }
+      .categories {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        span {
+          background: #f7f7f7;
+          border-radius: 20px;
+          font-weight: 500;
+          font-size: 0.8rem;
+          line-height: 1rem;
+          color: rgba(0, 0, 0, 0.5);
+          padding: 0.8rem 1.5em;
+          margin: 0rem 1rem;
+          cursor: pointer;
+          &.active {
+            background: #d5eef9;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #000000;
+          }
+        }
+      }
+      .options {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        border-radius: 20px;
+        padding: 2rem 2.5rem;
+        .slider {
+          width: 30%;
+          .label {
+            font-family: "GilroyLight";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 1rem;
+            line-height: 1rem;
+            color: var.$primary-blue;
+          }
+          .css-1kz0hui-MuiSlider-valueLabel.MuiSlider-valueLabelOpen {
+            transform: translateY(35px) scale(1) !important;
+          }
+          .css-1kz0hui-MuiSlider-valueLabel {
+            background-color: transparent !important;
+            color: #000000 !important;
+            font-family: "GilroyBold";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 1rem;
+            line-height: 1rem;
+          }
+          .css-1gv0vcd-MuiSlider-track {
+            background-color: var.$primary-blue;
+            border: 1px solid var.$primary-blue;
+          }
+          .css-eg0mwd-MuiSlider-thumb {
+            background-color: white;
+            width: 15px;
+            height: 15px;
+            border: 3px solid var.$primary-blue;
+          }
+        }
+
+        select {
+          max-width: 20rem;
+          background-color: #f7f7f7;
+          border-radius: 20px;
+          border: none;
+          padding: 0.8rem 2rem;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  .productWrapper {
+    padding: 0 var.$content-margin !important;
+    width: 100%;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .hotSelling,
+    .bidGallery {
+      width: 100%;
+      overflow-x: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      .mainHeading {
+        font-family: "GilroyBold";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 2rem;
+        line-height: 3rem;
+        color: #000000;
+        .orange {
+          color: var.$primary-orange;
+        }
+      }
+      .subHeading {
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 1.5rem;
+        color: #000000;
+      }
+      .slider {
+        width: 100%;
+        overflow-x: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        position: relative;
+        .swiper-slide {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: row;
+        }
+        .swiper-pagination {
+          position: unset !important;
+          margin-top: 2rem;
+        }
+        .swiper-pagination-bullet {
+          background: rgba(255, 158, 136, 0.45) !important;
+          width: 13px !important;
+          height: 13px !important;
+        }
+      }
+    }
+    .bidGallery {
+      .products {
+        width: 100%;
+        overflow-x: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .buttonWrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .Button-Custom-1.w-full {
+          width: fit-content;
+          text-transform: uppercase !important;
+        }
+      }
+    }
+  }
+}

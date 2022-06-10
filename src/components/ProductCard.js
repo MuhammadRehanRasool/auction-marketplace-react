@@ -10,6 +10,11 @@ export default function ProductCard(props) {
     currentBid: "",
     minimumBid: "",
     image: "",
+    isFavorite: false,
+    discount: "",
+    newPrice: "",
+    oldPrice: "",
+    category: "",
   });
 
   const [countdown, setCountdown] = useState({
@@ -51,44 +56,78 @@ export default function ProductCard(props) {
 
   return (
     <div className="__ProductCard">
-      <div className={`card ${props.type === "browse" ? props.type : ""}`}>
+      <div className={`card ${props.type}`}>
         <img src={data.image} className="card-img-top" alt={data.title} />
-        {props.type === "browse" ? (
+        {props.type === "auction" || props.type === "sale" ? (
           <span role={"button"} className="heart">
-            <img src="icons/heart.png" alt="heart" />
+            <img
+              src={`icons/${data.isFavorite ? "liked" : "heart"}.png`}
+              alt="heart"
+            />
           </span>
-        ) : (
-          ""
-        )}
-        <div className="card-body">
-          <div className="row1">
-            <span className="title">{data.title}</span>
-            <span className="number">Auc# {data.auctionNumber}</span>
-          </div>
-          <div className="row2 my-4">
-            <div className="bid justify-content-start">
-              <span className="label">Current bid</span>
-              <span className="value">${data.currentBid}</span>
+        ) : null}
+        {props.type === "sale" &&
+        data.discount !== "" &&
+        data.discount !== 0 ? (
+          <span className="discount">{data.discount}%</span>
+        ) : null}
+        {props.type !== "sale" ? (
+          <div className="card-body">
+            <div className="row1">
+              <span className="title">{data.title}</span>
+              <span className="number">Auc# {data.auctionNumber}</span>
             </div>
-            <div className="bid justify-content-end">
-              <span className="label">Minimum bid</span>
-              <span className="value">${data.minimumBid}</span>
+            <div className="row2 my-4">
+              <div className="bid justify-content-start">
+                <span className="label">Current bid</span>
+                <span className="value">${data.currentBid}</span>
+              </div>
+              <div className="bid justify-content-end">
+                <span className="label">Minimum bid</span>
+                <span className="value">${data.minimumBid}</span>
+              </div>
             </div>
-          </div>
-          <div className="border-top button">
-            <span role="button" className="bidButton">
-              QUICK BID
-            </span>
-            {props.type === "browse" ? (
-              <span className="timeLeft">
-                <b>{countdown.day}</b>d <b>{countdown.hour}</b>h{" "}
-                <b>{countdown.minute}</b>m <b>{countdown.second}</b>s
+            <div className="border-top button">
+              <span role="button" className="bidButton">
+                QUICK BID
               </span>
-            ) : (
-              ""
-            )}
+              {props.type === "auction" ? (
+                <span className="timeLeft">
+                  <b>{countdown.day}</b>d <b>{countdown.hour}</b>h{" "}
+                  <b>{countdown.minute}</b>m <b>{countdown.second}</b>s
+                </span>
+              ) : (
+                ""
+              )}
+            </div>
           </div>
-        </div>
+        ) : (
+          <div className="card-body">
+            <div className="row1">
+              <span className="title">{data.title}</span>
+            </div>
+            <div className="row2 my-2">
+              <div className="bid justify-content-start">
+                <span className="label">${data.newPrice}</span>
+                {data.oldPrice !== data.newPrice ? (
+                  <span className="value">
+                    <s>${data.oldPrice}</s>
+                  </span>
+                ) : (
+                  ""
+                )}
+              </div>
+              <div className="bid justify-content-end">
+                <img
+                  src="icons/add.png"
+                  alt="add"
+                  className="add"
+                  role={"button"}
+                />
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

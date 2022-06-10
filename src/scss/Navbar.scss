@@ -24,13 +24,17 @@
   .navbar-search {
     margin-right: 2rem;
     color: #c6c6c6;
-    min-width: 20rem;
+    min-width: 25rem;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     input {
       border: 1.3px solid #cccccc;
       border-radius: 25px;
       width: inherit;
-      padding: 0 1rem 0 1.5rem;
+      padding: 0 4rem 0 1.5rem;
+      height: 3rem;
       //   outline: none;
       //   border: 1.3px solid #cccccc;
       //   &:hover {
@@ -41,6 +45,11 @@
       //     outline: none;
       //     border: 1.3px solid #cccccc;
       //   }
+    }
+    img {
+      width: 1.2rem;
+      height: 1.2rem;
+      transform: translateX(-45px);
     }
   }
   .simple-nav-link {
@@ -75,7 +84,6 @@
       width: 100%;
     }
   }
-
 }
 @media only screen and (max-width: 980px) {
   .__Navbar {

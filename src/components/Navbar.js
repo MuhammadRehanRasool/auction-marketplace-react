@@ -10,7 +10,7 @@ const Navbar = (props) => {
     <>
       <nav className="navbar navbar-expand-lg __Navbar">
         <Link to="/" className="navbar-brand">
-          <img className="logo" src="logo.svg" alt="navbar logo"/>
+          <img className="logo" src="logo.svg" alt="navbar logo" />
         </Link>
         <button
           className="navbar-toggler"
@@ -31,12 +31,15 @@ const Navbar = (props) => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/" className="nav-link simple-nav-link active">
+              <Link to="/bidGallery" className="nav-link simple-nav-link active">
                 Bid Gallery
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/" className="nav-link simple-nav-link active">
+              <Link
+                to="/categories"
+                className="nav-link simple-nav-link active"
+              >
                 Categories
               </Link>
             </li>
@@ -51,6 +54,7 @@ const Navbar = (props) => {
                   setSearch(e.target.value);
                 }}
               />
+              <img src="icons/search.png" alt="search" role="button"/>
             </div>
 
             <ul className="navbar-nav mr-auto">

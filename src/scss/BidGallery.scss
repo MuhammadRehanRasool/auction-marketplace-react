@@ -1,0 +1,167 @@
+@use "./Variables.scss" as var;
+.__BidGallery {
+  position: relative;
+  .landing {
+    margin-top: var.$navbar-height;
+    padding: 0 var.$content-margin !important;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+
+    .mainHeading {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 2rem;
+      line-height: 24px;
+      letter-spacing: 0.03em;
+      color: #000000;
+    }
+    .subHeading {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 1rem;
+      line-height: 24px;
+      color: #000000;
+    }
+    .wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row;
+      width: 100%;
+      .categories {
+        width: 50%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+        span {
+          background: #f7f7f7;
+          border-radius: 20px;
+          font-weight: 500;
+          font-size: 0.8rem;
+          line-height: 1rem;
+          color: rgba(0, 0, 0, 0.5);
+          padding: 0.8rem 1.5em;
+          margin: 0rem 1rem;
+          cursor: pointer;
+          &.active {
+            background: #d5eef9;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #000000;
+          }
+        }
+      }
+      .options {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        .select {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-direction: row;
+          img {
+            width: 16px;
+            height: 16px;
+            transform: translateX(50px);
+          }
+          select {
+            max-width: 20rem;
+            background-color: #f7f7f7;
+            border-radius: 20px;
+            border: none;
+            padding: 0.8rem 2rem 0.8rem 3rem;
+            font-weight: 500;
+            margin: 0 1rem;
+          }
+        }
+      }
+    }
+  }
+  .productWrapper {
+    padding: 0 var.$content-margin !important;
+    width: 100%;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .hotSelling,
+    .bidGallery {
+      width: 100%;
+      overflow-x: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      .mainHeading {
+        font-family: "GilroyBold";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 2rem;
+        line-height: 3rem;
+        color: #000000;
+        .orange {
+          color: var.$primary-orange;
+        }
+      }
+      .subHeading {
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 1.5rem;
+        color: #000000;
+      }
+      .slider {
+        width: 100%;
+        overflow-x: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        position: relative;
+        .swiper-slide {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: row;
+        }
+        .swiper-pagination {
+          position: unset !important;
+          margin-top: 2rem;
+        }
+        .swiper-pagination-bullet {
+          background: rgba(255, 158, 136, 0.45) !important;
+          width: 13px !important;
+          height: 13px !important;
+        }
+      }
+    }
+    .bidGallery {
+      .products {
+        width: 100%;
+        overflow-x: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .buttonWrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .Button-Custom-1.w-full {
+          width: fit-content;
+          text-transform: uppercase !important;
+        }
+      }
+    }
+  }
+}
