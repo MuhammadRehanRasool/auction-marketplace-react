@@ -23,20 +23,22 @@ export default function ProductCard(props) {
     let countdownLoop;
     if (props.product !== "" || props.product !== null) {
       setData(props.product);
-      let eventTime = new Date(props.product.bidExpiry).getTime();
-      let currentTime = new Date().getTime();
-      let diffTime = eventTime - currentTime;
-      let duration = moment.duration(diffTime, "milliseconds");
-      let interval = 1000;
-      countdownLoop = setInterval(function () {
-        duration = moment.duration(duration - interval, "milliseconds");
-        setCountdown({
-          day: Math.floor(duration.asDays()),
-          hour: duration.hours(),
-          minute: duration.minutes(),
-          second: duration.seconds(),
-        });
-      }, interval);
+      if (!!props.product.bidExpiry) {
+        let eventTime = new Date(props.product.bidExpiry).getTime();
+        let currentTime = new Date().getTime();
+        let diffTime = eventTime - currentTime;
+        let duration = moment.duration(diffTime, "milliseconds");
+        let interval = 1000;
+        countdownLoop = setInterval(function () {
+          duration = moment.duration(duration - interval, "milliseconds");
+          setCountdown({
+            day: Math.floor(duration.asDays()),
+            hour: duration.hours(),
+            minute: duration.minutes(),
+            second: duration.seconds(),
+          });
+        }, interval);
+      }
     }
 
     return () => {
