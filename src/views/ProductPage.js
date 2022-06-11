@@ -1,4 +1,4 @@
-import React, {  } from "react";
+import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "./../scss/ProductPage.scss";
@@ -6,6 +6,7 @@ import PrintIcon from "@mui/icons-material/Print";
 import DescriptionIcon from "@mui/icons-material/Description";
 import BeenhereIcon from "@mui/icons-material/Beenhere";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import { Link } from "react-router-dom";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -98,7 +99,7 @@ export default function ProductPage() {
             </div>
           </div>
           <div className="col-lg-6 right">
-            <div className="row top">
+            <div className="row top my-2">
               <span>
                 Diamond Cuban Link Chain Real 26.31 Carats Diamond Solid Yellow
                 Gold Mens Chains 12Mm
@@ -118,11 +119,60 @@ export default function ProductPage() {
                 </div>
                 <div className="row border-top">
                   <div className="col-6 label">Time Remaining</div>
-                  <div className="col-6 value">$11,000</div>
+                  <span className="col-6 value timeLeft">
+                    <b>{2}</b>d <b>{2}</b>h <b>{2}</b>m <b>{2}</b>s
+                  </span>
                 </div>
               </div>
+              <div className="row button">QUICK BID $900.00</div>
+              {/* <div className="row button-option mt-4">
+                <button className="btn btn-light" type="button">
+                  Subscribe
+                </button>
+                <input type="text" className="form-control" />
+              </div> */}
+              <span className="tagline mt-4">Share with platforms</span>
+              <div className="medias mt-4">
+                <a href="/#" target={"blank"}>
+                  <img src="/icons/Vector.png" alt="Vector.png" />
+                </a>
+                <a href="/#" target={"blank"}>
+                  <img src="/icons/Vector-1.png" alt="Vector-1" />
+                </a>
+                <a href="/#" target={"blank"}>
+                  <img src="/icons/Vector-2.png" alt="Vector-2" />
+                </a>
+                <a href="/#" target={"blank"}>
+                  <img src="/icons/Vector-3.png" alt="Vector-3" />
+                </a>
+                <a href="/#" target={"blank"}>
+                  <img src="/icons/Vector-4.png" alt="Vector-4" />
+                </a>
+              </div>
             </div>
-            <div className="row">{/* Offers */}</div>
+            <div className="row offers mt-4">
+              <div className="tagline py-2">OFFERS</div>
+              <div className="row tableHead border-top">
+                <div className="col-3">Price</div>
+                <div className="col-3">Maximum Bid</div>
+                <div className="col-3">Expiration</div>
+                <div className="col-3">From</div>
+              </div>
+              {[...Array(6)].map((a, b) => {
+                return (
+                  <div className="row tableValues border-top">
+                    <div className="col-3">$17,800</div>
+                    <div className="col-3 maximum">$117,800</div>
+                    <div className="col-3 timeLeft">
+                      <b>{2}</b>d <b>{2}</b>h <b>{2}</b>m <b>{2}</b>s
+                    </div>
+                    <div className="col-3 username">
+                      <Link to="#?">rehan</Link>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
