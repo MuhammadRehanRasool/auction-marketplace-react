@@ -33,19 +33,19 @@ export default function Footer() {
         <span className="u6 mt-4">Join our community</span>
         <div className="u7 mt-4">
           <a href="/#" target={"blank"}>
-            <img src="icons/Vector.png" alt="Vector.png"/>
+            <img src="/icons/Vector.png" alt="Vector.png"/>
           </a>
           <a href="/#" target={"blank"}>
-            <img src="icons/Vector-1.png" alt="Vector-1"/>
+            <img src="/icons/Vector-1.png" alt="Vector-1"/>
           </a>
           <a href="/#" target={"blank"}>
-            <img src="icons/Vector-2.png" alt="Vector-2"/>
+            <img src="/icons/Vector-2.png" alt="Vector-2"/>
           </a>
           <a href="/#" target={"blank"}>
-            <img src="icons/Vector-3.png" alt="Vector-3"/>
+            <img src="/icons/Vector-3.png" alt="Vector-3"/>
           </a>
           <a href="/#" target={"blank"}>
-            <img src="icons/Vector-4.png" alt="Vector-4"/>
+            <img src="/icons/Vector-4.png" alt="Vector-4"/>
           </a>
         </div>
       </div>

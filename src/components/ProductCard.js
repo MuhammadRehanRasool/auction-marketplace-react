@@ -61,7 +61,7 @@ export default function ProductCard(props) {
         {props.type === "auction" || props.type === "sale" ? (
           <span role={"button"} className="heart">
             <img
-              src={`icons/${data.isFavorite ? "liked" : "heart"}.png`}
+              src={`/icons/${data.isFavorite ? "liked" : "heart"}.png`}
               alt="heart"
             />
           </span>
@@ -119,7 +119,7 @@ export default function ProductCard(props) {
               </div>
               <div className="bid justify-content-end">
                 <img
-                  src="icons/add.png"
+                  src="/icons/add.png"
                   alt="add"
                   className="add"
                   role={"button"}

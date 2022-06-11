@@ -231,13 +231,13 @@ export default function BidGallery() {
           </div>
           <div className="options">
             <div className="select">
-              <img src="icons/filter.png" alt="filter" />
+              <img src="/icons/filter.png" alt="filter" />
               <select className="form-select">
                 <option>Filter</option>
               </select>
             </div>
             <div className="select">
-              <img src="icons/newest.png" alt="new" />
+              <img src="/icons/newest.png" alt="new" />
               <select className="form-select">
                 <option>Newest</option>
               </select>

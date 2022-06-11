@@ -1045,7 +1045,7 @@ export default function Categories() {
                 //   setSearch(e.target.value);
               }}
             />
-            <img src="icons/search.png" alt="search" role="button" />
+            <img src="/icons/search.png" alt="search" role="button" />
           </div>
           <div className="categories">
             <span className="active">All</span>

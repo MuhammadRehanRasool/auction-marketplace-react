@@ -10,7 +10,7 @@ const Navbar = (props) => {
     <>
       <nav className="navbar navbar-expand-lg __Navbar">
         <Link to="/" className="navbar-brand">
-          <img className="logo" src="logo.svg" alt="navbar logo" />
+          <img className="logo" src="/logo.svg" alt="navbar logo" />
         </Link>
         <button
           className="navbar-toggler"
@@ -54,7 +54,7 @@ const Navbar = (props) => {
                   setSearch(e.target.value);
                 }}
               />
-              <img src="icons/search.png" alt="search" role="button"/>
+              <img src="/icons/search.png" alt="search" role="button"/>
             </div>
 
             <ul className="navbar-nav mr-auto">

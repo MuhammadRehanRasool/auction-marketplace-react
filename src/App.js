@@ -6,6 +6,7 @@ import Register from "./views/Register";
 import Home from "./views/Home";
 import Categories from "./views/Categories";
 import BidGallery from "./views/BidGallery";
+import ProductPage from "./views/ProductPage";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/categories" element={<Categories />} />
           <Route path="/bidGallery" element={<BidGallery />} />
+          <Route path="/product/*" element={<ProductPage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="*" element={<Home />} />

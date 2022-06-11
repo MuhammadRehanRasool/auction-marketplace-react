@@ -143,21 +143,21 @@
           .css-1kz0hui-MuiSlider-valueLabel {
             background-color: transparent !important;
             color: #000000 !important;
-            font-family: "GilroyBold";
-            font-style: normal;
-            font-weight: 700;
-            font-size: 1rem;
-            line-height: 1rem;
+            font-family: "GilroyBold"!important;
+            font-style: normal!important;
+            font-weight: 700!important;
+            font-size: 1rem!important;
+            line-height: 1rem!important;
           }
           .css-1gv0vcd-MuiSlider-track {
-            background-color: var.$primary-blue;
-            border: 1px solid var.$primary-blue;
+            background-color: var.$primary-blue!important;
+            border: 1px solid var.$primary-blue!important;
           }
           .css-eg0mwd-MuiSlider-thumb {
-            background-color: white;
-            width: 15px;
-            height: 15px;
-            border: 3px solid var.$primary-blue;
+            background-color: white!important;
+            width: 15px!important;
+            height: 15px!important;
+            border: 3px solid var.$primary-blue!important;
           }
         }
 
