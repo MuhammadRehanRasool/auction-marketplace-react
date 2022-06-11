@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./../scss/ProductCard.scss";
 import moment from "moment";
+import { Link } from "react-router-dom";
 
 export default function ProductCard(props) {
   const [data, setData] = useState({
@@ -55,7 +56,7 @@ export default function ProductCard(props) {
   if (!props.product) return;
 
   return (
-    <div className="__ProductCard">
+    <Link to="/product/*" className="__ProductCard">
       <div className={`card ${props.type}`}>
         <img src={data.image} className="card-img-top" alt={data.title} />
         {props.type === "auction" || props.type === "sale" ? (
@@ -129,6 +130,6 @@ export default function ProductCard(props) {
           </div>
         )}
       </div>
-    </div>
+    </Link>
   );
 }
