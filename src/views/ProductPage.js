@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "./../scss/ProductPage.scss";
@@ -6,12 +6,56 @@ import PrintIcon from "@mui/icons-material/Print";
 import DescriptionIcon from "@mui/icons-material/Description";
 import BeenhereIcon from "@mui/icons-material/Beenhere";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import ProductCard from "../components/ProductCard";
 import { Link } from "react-router-dom";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 
 export default function ProductPage() {
+  // eslint-disable-next-line
+  const [browse, setBrowse] = useState([
+    {
+      itemId: "a7b53ce9-ad00-45f9-825b-486cf6be22e1",
+      title: "Wine - Ruffino Chianti",
+      auctionNumber: "001",
+      currentBid: 81.1,
+      minimumBid: 93.1,
+      image: "https://picsum.photos/200?random=1",
+      bidExpiry: "2022-07-10 12:41:52",
+      isFavorite: false,
+    },
+    {
+      itemId: "a405328b-9589-4000-a6f8-2cb640c39e71",
+      title: "Glass - Juice Clear 5oz 55005",
+      auctionNumber: "002",
+      currentBid: 47.7,
+      minimumBid: 55.5,
+      image: "https://picsum.photos/200?random=2",
+      bidExpiry: "2022-07-20 23:07:36",
+      isFavorite: true,
+    },
+    {
+      itemId: "e0d24d60-c896-406c-b23c-9d44086ddcf6",
+      title: "Assorted Desserts",
+      auctionNumber: "003",
+      currentBid: 8.9,
+      minimumBid: 94.4,
+      image: "https://picsum.photos/200?random=3",
+      bidExpiry: "2022-06-19 19:53:10",
+      isFavorite: false,
+    },
+    {
+      itemId: "074a869d-a28f-4175-a28b-109fa69690d7",
+      title: "Wine - Chateau Timberlay",
+      auctionNumber: "004",
+      currentBid: 80.8,
+      minimumBid: 16.4,
+      image: "https://picsum.photos/200?random=4",
+      bidExpiry: "2022-08-28 00:01:19",
+      isFavorite: true,
+    },
+  ]);
   return (
     <div className="__ProductPage">
       <Navbar />
@@ -173,6 +217,22 @@ export default function ProductPage() {
                 );
               })}
             </div>
+          </div>
+        </div>
+        <div className="suggested py-4">
+          <span className="mt-5 mainheading">
+            Suggested <span className="orange">Products</span>
+          </span>
+          <div className="row w-100 d-flex">
+            {browse.length > 0
+              ? browse.map((product, index) => {
+                  return (
+                    <div className="col-lg-3 col-sm-12 col-md-4 my-3">
+                      <ProductCard type="auction" product={product} />
+                    </div>
+                  );
+                })
+              : "No products available right now."}
           </div>
         </div>
       </div>

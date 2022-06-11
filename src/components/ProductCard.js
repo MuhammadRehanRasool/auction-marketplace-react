@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./../scss/ProductCard.scss";
 import moment from "moment";
 import { Link } from "react-router-dom";
+import Tooltip from "@mui/material/Tooltip";
 
 export default function ProductCard(props) {
   const [data, setData] = useState({
@@ -75,7 +76,9 @@ export default function ProductCard(props) {
         {props.type !== "sale" ? (
           <div className="card-body">
             <div className="row1">
-              <span className="title">{data.title}</span>
+              <Tooltip title={data.title}>
+                <span className={`title`}>{data.title}</span>
+              </Tooltip>
               <span className="number">Auc# {data.auctionNumber}</span>
             </div>
             <div className="row2 my-4">
