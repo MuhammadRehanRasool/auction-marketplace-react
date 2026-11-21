@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+# Ecomm Figma: Auction Marketplace Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A responsive frontend for an online auction marketplace. I built it in React from a Figma design. The pages cover browsing live auctions and discounted products, viewing a product's bid details, and signing in or registering. All product data is static mock data, so the app does not need a backend to run.
 
-## Available Scripts
+## Pages
 
-In the project directory, you can run:
+| Route | Page | What it shows |
+|-------|------|---------------|
+| `/` | Home | Hero section, product carousels (Swiper), and calls to action |
+| `/bidGallery` | Bid Gallery | Grid of auction items with current/minimum bid and a live countdown to bid expiry |
+| `/categories` | Categories | Search bar, category tabs, discount-range slider, and a grid of discounted products (old/new price, discount badge) |
+| `/product/*` | Product Page | Product description, higher/minimum/current bid, time remaining, quick-bid button, share links, offers table, and related products |
+| `/login` | Login | Login form with a "forgot password" mode and inline validation messages |
+| `/register` | Register | Personal-information form (name, username, email, company, US state, password confirmation) with client-side validation |
 
-### `npm start`
+Unknown routes fall back to the Home page.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Reusable components
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Navbar**: brand logo, page links, and Login/Register buttons
+- **Footer**: site footer with links
+- **ProductCard**: one card for auction items and discounted products. It shows a favourite toggle, tooltips, and a per-second countdown built with `moment`.
 
-### `npm test`
+## Tech stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- React 18 (Create React App, `react-scripts` 5)
+- React Router v6
+- MUI 5 (`@mui/material`, `@mui/icons-material`) with Emotion
+- Swiper and react-multi-carousel for the sliders
+- Sass (SCSS) for styling, plus Bootstrap 5 loaded from a CDN for the grid and utility classes
+- Moment.js for the countdown timers
 
-### `npm run build`
+## Project structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+public/            static assets (icons, product images, index.html, Netlify _redirects)
+src/
+  App.js           route definitions
+  CONSTANT.js      shared helpers (inline messages, cookies, base URLs)
+  components/      Navbar, Footer, ProductCard
+  views/           Home, BidGallery, Categories, ProductPage, Login, Register
+  scss/            per-page and per-component stylesheets
+  fonts/           Gilroy font files
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Getting started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Requirements: Node.js 16+ and npm.
 
-### `npm run eject`
+```bash
+npm install
+npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The app runs at http://localhost:3000.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Scripts
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+| Command | Description |
+|---------|-------------|
+| `npm start` | Start the development server |
+| `npm run build` | Create a production build in `build/` |
+| `npm test` | Run tests in watch mode |
+| `npm run eject` | Eject from Create React App (one-way) |
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Notes
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- This is a frontend only. The login and register forms validate input but do not call an API yet.
+- `public/_redirects` sends every route to `index.html`, so client-side routing works on Netlify.
